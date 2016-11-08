@@ -11,7 +11,7 @@ String.prototype.capitalizeFirstLetter = function() {
 }
 
 function handle (game, raw_command) {
-  $(game.output).append($("<p>").append($("<em>").text(command)));
+  $(game.output).append($("<p>").append($("<em>").text(raw_command)));
   var raw = raw_command.trim().toLowerCase();
   var splitPoint = raw.indexOf(" ");
   var command, param;
