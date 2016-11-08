@@ -742,8 +742,8 @@ function improve_stat (mobile, stat, maximum) {
 }
 
 function can_pay (game, amount) {
-  if (game.data.character >= amount) {
-    game.data.character -= amount;
+  if (game.data.character.gold >= amount) {
+    game.data.character.gold -= amount;
     return true;
   } else {
     game.print("You don't have enough money.");
