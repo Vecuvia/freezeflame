@@ -77,5 +77,16 @@ var Spells = {
       game.print(summon.article.capitalizeFirstLetter() + " " + summon.name + " rattles " + summon.reflexive_pronoun + " back together and stands up shakily to follow you.");
       game.data.summons.push(summon);
     }
+  },
+  recall: {
+    cost: 4,
+    check: function (game) {
+      return true;
+    },
+    cast: function (game) {
+      game.print("You gather your magic about you and, focusing on the image of your camp, <em>bend</em> the world around you.");
+      game.goto("AtTheCamp");
+      game.level = 0;
+    }
   }
 }
