@@ -377,7 +377,11 @@ var Scenes = {
       }
       game.print("You can <strong>attack</strong>, <strong>cast</strong> a spell or try to <strong>flee</strong>.");
     },
-    aliases: {},
+    aliases: {
+      a: "attack",
+      atk: "attack",
+      f: "flee"
+    },
     commands: {
       attack: function (game, param) {
         if (param) {
