@@ -10,8 +10,9 @@ String.prototype.capitalizeFirstLetter = function() {
   return this.charAt(0).toUpperCase() + this.slice(1);
 }
 
-function handle (game, raw) {
-  $(game.output).append($("<p>").append($("<em>").text(raw)));
+function handle (game, raw_command) {
+  $(game.output).append($("<p>").append($("<em>").text(command)));
+  var raw = raw_command.trim().toLowerCase();
   var splitPoint = raw.indexOf(" ");
   var command, param;
   if (splitPoint !== -1 ) {
@@ -39,7 +40,7 @@ function handle (game, raw) {
     if (command in scene.commands) {
       take_no_time = scene.commands[command](game, param);
     } else {
-      take_no_time = scene.default(game, raw);
+      take_no_time = scene.default(game, raw_command);
     }
   }
   if (!take_no_time && scene === Scenes[game.data.scene]) {
